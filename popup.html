@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>TabTab</h1>
+
+    <div class="setting master-toggle">
+      <label class="checkbox-label">
+        <input type="checkbox" id="enabled" checked>
+        <span>Enable TabTab</span>
+      </label>
+    </div>
+
+    <div id="settings">
+    <div class="setting">
+      <label for="granularity">Domain Grouping</label>
+      <select id="granularity">
+        <option value="main">Main domain (google.com)</option>
+        <option value="full">Full domain (docs.google.com)</option>
+      </select>
+      <p class="hint">Main domain groups all subdomains together. Full domain keeps them separate.</p>
+    </div>
+
+    <div class="setting">
+      <label class="checkbox-label">
+        <input type="checkbox" id="autoCollapse" checked>
+        <span>Auto-collapse inactive groups</span>
+      </label>
+    </div>
+
+    <div class="setting">
+      <label class="checkbox-label">
+        <input type="checkbox" id="sortGroupsToFront" checked>
+        <span>Sort groups at front (alphabetical)</span>
+      </label>
+    </div>
+
+    <div class="setting">
+      <label class="checkbox-label">
+        <input type="checkbox" id="showTabCount" checked>
+        <span>Show tab count in group name</span>
+      </label>
+    </div>
+
+    <div class="setting">
+      <label for="excludedDomains">Excluded Domains</label>
+      <textarea id="excludedDomains" rows="4"
+        placeholder="One domain per line&#10;e.g. github.com"></textarea>
+      <p class="hint">These domains will never be auto-grouped.</p>
+    </div>
+
+    <div class="setting">
+      <label>Group Names</label>
+      <div id="domainNameList"></div>
+      <div class="add-row">
+        <input type="text" id="newDomain" placeholder="domain">
+        <input type="text" id="newName" placeholder="display name">
+        <button id="addDomainName" class="btn-small">+</button>
+      </div>
+    </div>
+
+    <button id="save">Save</button>
+    <div id="status" class="hidden">Saved!</div>
+    </div>
+  </div>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

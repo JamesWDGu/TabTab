@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "TabTab",
+  "version": "1.0.0",
+  "description": "Automatically group tabs by domain with smart collapsing of inactive groups.",
+  "permissions": [
+    "tabGroups",
+    "tabs",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "minimum_chrome_version": "93"
+}
